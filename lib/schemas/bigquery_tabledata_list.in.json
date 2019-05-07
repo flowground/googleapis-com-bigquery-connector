@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "datasetId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "projectId": {
+            "required": true,
+            "type": "string"
+        },
+        "selectedFields": {
+            "type": "string"
+        },
+        "startIndex": {
+            "type": "string"
+        },
+        "tableId": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

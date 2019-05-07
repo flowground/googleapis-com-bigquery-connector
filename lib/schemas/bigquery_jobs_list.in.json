@@ -1,0 +1,42 @@
+{
+    "type": "object",
+    "properties": {
+        "allUsers": {
+            "type": "boolean"
+        },
+        "maxCreationTime": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "minCreationTime": {
+            "type": "string"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "projectId": {
+            "required": true,
+            "type": "string"
+        },
+        "projection": {
+            "type": "string",
+            "enum": [
+                "full",
+                "minimal"
+            ]
+        },
+        "stateFilter": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "done",
+                    "pending",
+                    "running"
+                ],
+                "type": "string"
+            }
+        }
+    }
+}

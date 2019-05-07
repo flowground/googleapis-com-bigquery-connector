@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "datasetId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "projectId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

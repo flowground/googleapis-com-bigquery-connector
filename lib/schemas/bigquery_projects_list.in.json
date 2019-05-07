@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

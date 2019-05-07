@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "jobId": {
+            "required": true,
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "projectId": {
+            "required": true,
+            "type": "string"
+        },
+        "startIndex": {
+            "type": "string"
+        },
+        "timeoutMs": {
+            "type": "integer"
+        }
+    }
+}

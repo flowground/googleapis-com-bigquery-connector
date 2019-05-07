@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "all": {
+            "type": "boolean"
+        },
+        "filter": {
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "projectId": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

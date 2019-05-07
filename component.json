@@ -1,0 +1,424 @@
+{
+    "title": "BigQuery",
+    "description": "A data platform for customers to create, manage, share and query data.",
+    "docsUrl": "https://cloud.google.com/bigquery/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/bigquery/v2/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/bigquery/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "bigquery_projects_list": {
+            "main": "./lib/actions/bigquery_projects_list.js",
+            "title": "Lists all projects to which you have been granted any project role.",
+            "description": "Lists all projects to which you have been granted any project role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_projects_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_list": {
+            "main": "./lib/actions/bigquery_datasets_list.js",
+            "title": "Lists all datasets in the specified project to which you have been granted the READER dataset role.",
+            "description": "Lists all datasets in the specified project to which you have been granted the READER dataset role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_insert": {
+            "main": "./lib/actions/bigquery_datasets_insert.js",
+            "title": "Creates a new empty dataset.",
+            "description": "Creates a new empty dataset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_delete": {
+            "main": "./lib/actions/bigquery_datasets_delete.js",
+            "title": "Deletes the dataset specified by the datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.",
+            "description": "Deletes the dataset specified by the datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_get": {
+            "main": "./lib/actions/bigquery_datasets_get.js",
+            "title": "Returns the dataset specified by datasetID.",
+            "description": "Returns the dataset specified by datasetID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_patch": {
+            "main": "./lib/actions/bigquery_datasets_patch.js",
+            "title": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource. This method supports patch semantics.",
+            "description": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_datasets_update": {
+            "main": "./lib/actions/bigquery_datasets_update.js",
+            "title": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource.",
+            "description": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_datasets_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_list": {
+            "main": "./lib/actions/bigquery_tables_list.js",
+            "title": "Lists all tables in the specified dataset. Requires the READER dataset role.",
+            "description": "Lists all tables in the specified dataset. Requires the READER dataset role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_insert": {
+            "main": "./lib/actions/bigquery_tables_insert.js",
+            "title": "Creates a new, empty table in the dataset.",
+            "description": "Creates a new, empty table in the dataset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_delete": {
+            "main": "./lib/actions/bigquery_tables_delete.js",
+            "title": "Deletes the table specified by tableId from the dataset. If the table contains data, all the data will be deleted.",
+            "description": "Deletes the table specified by tableId from the dataset. If the table contains data, all the data will be deleted.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_get": {
+            "main": "./lib/actions/bigquery_tables_get.js",
+            "title": "Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.",
+            "description": "Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_patch": {
+            "main": "./lib/actions/bigquery_tables_patch.js",
+            "title": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.",
+            "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tables_update": {
+            "main": "./lib/actions/bigquery_tables_update.js",
+            "title": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.",
+            "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tables_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tabledata_list": {
+            "main": "./lib/actions/bigquery_tabledata_list.js",
+            "title": "Retrieves table data from a specified set of rows. Requires the READER dataset role.",
+            "description": "Retrieves table data from a specified set of rows. Requires the READER dataset role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tabledata_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_tabledata_insertAll": {
+            "main": "./lib/actions/bigquery_tabledata_insertAll.js",
+            "title": "Streams data into BigQuery one record at a time without needing to run a load job. Requires the WRITER dataset role.",
+            "description": "Streams data into BigQuery one record at a time without needing to run a load job. Requires the WRITER dataset role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_tabledata_insertAll.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_list": {
+            "main": "./lib/actions/bigquery_jobs_list.js",
+            "title": "Lists all jobs that you started in the specified project. Job information is available for a six month period after creation. The job list is sorted in reverse chronological order, by job creation time. Requires the Can View project role, or the Is Owner project role if you set the allUsers property.",
+            "description": "Lists all jobs that you started in the specified project. Job information is available for a six month period after creation. The job list is sorted in reverse chronological order, by job creation time. Requires the Can View project role, or the Is Owner project role if you set the allUsers property.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_insert": {
+            "main": "./lib/actions/bigquery_jobs_insert.js",
+            "title": "Starts a new asynchronous job. Requires the Can View project role.",
+            "description": "Starts a new asynchronous job. Requires the Can View project role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_get": {
+            "main": "./lib/actions/bigquery_jobs_get.js",
+            "title": "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role.",
+            "description": "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_cancel": {
+            "main": "./lib/actions/bigquery_jobs_cancel.js",
+            "title": "Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.",
+            "description": "Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_cancel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_query": {
+            "main": "./lib/actions/bigquery_jobs_query.js",
+            "title": "Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.",
+            "description": "Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_query.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_jobs_getQueryResults": {
+            "main": "./lib/actions/bigquery_jobs_getQueryResults.js",
+            "title": "Retrieves the results of a query job.",
+            "description": "Retrieves the results of a query job.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_jobs_getQueryResults.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "bigquery_projects_getServiceAccount": {
+            "main": "./lib/actions/bigquery_projects_getServiceAccount.js",
+            "title": "Returns the email address of the service account for your project used for interactions with Google Cloud KMS.",
+            "description": "Returns the email address of the service account for your project used for interactions with Google Cloud KMS.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/bigquery_projects_getServiceAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
