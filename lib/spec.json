@@ -7775,7 +7775,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/bigquery": "View and manage your data in Google BigQuery",
@@ -7785,7 +7785,8 @@
                             "https://www.googleapis.com/auth/devstorage.full_control": "Manage your data and permissions in Google Cloud Storage",
                             "https://www.googleapis.com/auth/devstorage.read_only": "View your data in Google Cloud Storage",
                             "https://www.googleapis.com/auth/devstorage.read_write": "Manage your data in Google Cloud Storage"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }

@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the BigQuery API (version v2).
 
 Generated from: https://api.apis.guru/v2/specs/googleapis.com/bigquery/v2/swagger.json<br/>
-Generated at: 2019-05-07T17:41:13+03:00
+Generated at: 2019-05-23T12:13:00+03:00
 
 ## API Description
 
